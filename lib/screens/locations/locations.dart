@@ -31,18 +31,20 @@ class Locations extends StatelessWidget {
                     .toList(),
               ),
             ),
-            RaisedButton(
+            Container(margin: EdgeInsets.all(20),
+                child: RaisedButton(
               child: Text(
                 "بریم به گردش",
-                style: TextStyle(color: Colors.white, fontSize: 15, fontFamily: 'Vazir'),
+                style: TextStyle(
+                    color: Colors.white, fontSize: 15, fontFamily: 'Vazir'),
               ),
-              onPressed:() => _showToast(context),
-              elevation: 20,
+              onPressed: () => _showToast(context),
+              elevation: 10,
               padding: EdgeInsets.all(15),
               color: Colors.deepOrangeAccent,
               shape: RoundedRectangleBorder(
                   borderRadius: new BorderRadius.circular(20.0)),
-            )
+            )),
           ],
         ));
   }
@@ -54,6 +56,7 @@ class Locations extends StatelessWidget {
 
   _showToast(BuildContext context) {
     print('helo');
-    Toast.show("بزن بریم", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
+    Toast.show("بزن بریم", context,
+        duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
   }
 }
