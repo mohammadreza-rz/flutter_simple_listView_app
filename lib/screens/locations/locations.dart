@@ -13,10 +13,10 @@ class Locations extends StatelessWidget {
         appBar: AppBar(
           title: Text('مکان های دیدنی'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        body: Stack(
+//          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Expanded(
+            Positioned.fill(
               child: ListView(
                 children: locations
                     .map((location) => GestureDetector(
@@ -31,20 +31,26 @@ class Locations extends StatelessWidget {
                     .toList(),
               ),
             ),
-            Container(margin: EdgeInsets.all(20),
-                child: RaisedButton(
-              child: Text(
-                "بریم به گردش",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 15, fontFamily: 'Vazir'),
-              ),
-              onPressed: () => _showToast(context),
-              elevation: 10,
-              padding: EdgeInsets.all(15),
-              color: Colors.deepOrangeAccent,
-              shape: RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(20.0)),
-            )),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                  margin: EdgeInsets.all(20),
+                  child: RaisedButton(
+                    child: Text(
+                      "بریم به گردش",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 15,
+                          fontFamily: 'Vazir'),
+                    ),
+                    onPressed: () => _showToast(context),
+                    elevation: 10,
+                    padding: EdgeInsets.all(15),
+                    color: Colors.deepOrangeAccent,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(20.0)),
+                  )),
+            ),
           ],
         ));
   }
